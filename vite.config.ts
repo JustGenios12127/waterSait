@@ -7,9 +7,8 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ВАЖНО: base = /имя_репозитория/ для GitHub Pages
-export default defineConfig({
-  base: "/waterSait/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "production" ? "/waterSait/" : "/",
   server: {
     host: "0.0.0.0",
     port: 3000,
@@ -20,4 +19,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-});
+}));

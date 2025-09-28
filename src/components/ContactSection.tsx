@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle, Phone, Download } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -21,7 +21,7 @@ const ContactSection = () => {
             {t('contact.subtitle')}
           </p>
           
-          <div className="flex justify-center px-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
             <a 
               href="https://wa.me/77001112233?text=Здравствуйте! Меня интересуют ваши продукты для водоснабжения" 
               target="_blank" 
@@ -34,6 +34,21 @@ const ContactSection = () => {
               >
                 <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
                 {t('cta.whatsapp')}
+              </Button>
+            </a>
+            
+            <a 
+              href="/presentation.pdf" 
+              download="BAO-Company-Presentation.pdf"
+              className="group w-full sm:w-auto"
+            >
+              <Button 
+                size="lg" 
+                variant="hero"
+                className="shadow-lg hover:shadow-xl transition-all hover:scale-105 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg"
+              >
+                <Download className="h-5 w-5 sm:h-6 sm:w-6 mr-2 sm:mr-3" />
+                {t('cta.downloadPresentation')}
               </Button>
             </a>
           </div>

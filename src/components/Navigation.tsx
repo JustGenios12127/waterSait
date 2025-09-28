@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Droplets, Menu, X } from "lucide-react";
+import { Menu, X, Droplets } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -18,17 +18,18 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-border shadow-soft">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-primary">
-            <Droplets className="h-6 w-6 sm:h-8 sm:w-8 animate-wave" />
-            <span className="text-lg sm:text-xl font-bold bg-gradient-water bg-clip-text text-transparent">
+      {/* убираем container и отступы */}
+      <div className="w-full">
+        <div className="flex items-center justify-between h-16 px-2">
+          <Link to="/" className="flex items-center gap-2 text-xl font-bold pl-0">
+            <Droplets className="h-8 w-8 text-water animate-[float-y_3s_ease-in-out_infinite]" />
+            <span className="bg-gradient-water bg-clip-text text-transparent">
               BAO Company
             </span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8 pr-0">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -48,7 +49,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 md:hidden pr-2">
             <LanguageSwitcher />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Droplets, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import baoLogo from "@/assets/bao-logo.png";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -16,20 +17,26 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center py-8">
-        <Droplets className="h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 mx-auto mb-4 sm:mb-6 md:mb-8 text-primary animate-wave" />
+        {/* LOGO */}
+        <div className="mb-0 animate-fade-in">
+          <img 
+            src={baoLogo} 
+            alt="BAO Company" 
+            className="block mx-auto transform translate-x-6 h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 2xl:h-[28rem] w-auto transition-all duration-300"
+          />
+        </div>
         
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 animate-fade-in">
-          <span className="bg-gradient-water bg-clip-text text-transparent">
-            BAO Company
-          </span>
-          <br />
-          <span className="text-foreground text-xl sm:text-2xl md:text-3xl lg:text-4xl">{t('hero.title')}</span>
+        {/* TITLE */}
+        <h1 className="-mt-3 sm:-mt-4 lg:-mt-5 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight animate-fade-in">
+          <span className="text-foreground">{t('hero.title')}</span>
         </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto animate-slide-up px-4">
+        {/* SUBTITLE */}
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mt-3 sm:mt-4 mb-6 sm:mb-8 max-w-2xl mx-auto animate-slide-up px-4">
           {t('hero.subtitle')}
         </p>
 
+        {/* CTA BUTTONS */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-slide-up animation-delay-200 px-4">
           <a 
             href="#contact"

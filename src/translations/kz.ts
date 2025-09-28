@@ -384,7 +384,8 @@ const kz = {
     freeInstallation: 'Тегін орнату',
     warrantyShort: 'Гарантия 1 года', // RU-дағы мағынамен синхрон үшін қысқа лейбл
     warranty3Years: 'Гарантия 1 года',
-    back: 'Басты бетке оралу'
+    back: 'Басты бетке оралу',
+    downloadPresentation: 'Презентацияны жүктеу',
   }
 };
 
